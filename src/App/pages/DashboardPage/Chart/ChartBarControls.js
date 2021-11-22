@@ -1,7 +1,11 @@
 import React from "react";
-
+import CalendarDialog from "../PopupCalendar";
 const ChartBarControls = () => {
-  return <div className="">bar controls</div>;
+  return (
+    <div className="">
+      <CalendarDialog />
+    </div>
+  );
 };
 
 export default ChartBarControls;

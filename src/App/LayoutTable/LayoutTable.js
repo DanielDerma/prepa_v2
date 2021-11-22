@@ -4,7 +4,12 @@ import { Button, Divider, Grid, Typography } from "@mui/material";
 import TableSet from "./Tables/DataTable";
 import Search from "./Search";
 
-const LayoutTable = ({ title = "Personal del Instituto", rows, infoProps }) => {
+const LayoutTable = ({
+  title = "Personal del Instituto",
+  rows,
+  infoProps,
+  isSiiMain,
+}) => {
   return (
     <>
       <Grid item xs={12}>
@@ -20,9 +25,8 @@ const LayoutTable = ({ title = "Personal del Instituto", rows, infoProps }) => {
           <Divider sx={{ mb: 1 }} />
         </Grid>
         <Grid item xs={12}>
-          <TableSet rows={rows} infoProps={infoProps} />
+          <TableSet rows={rows} infoProps={infoProps} isSiiMain={isSiiMain} />
         </Grid>
-
         <Grid
           item
           xs={12}

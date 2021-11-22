@@ -42,15 +42,23 @@ function Copyright(props) {
       {...props}
     >
       {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
+      <Link
+        color="inherit"
+        href="https://industryconect.com.mx/"
+        target="_blank"
+      >
+        Industry Conect
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
     </Typography>
   );
 }
-const mdTheme = createTheme();
+const mdTheme = createTheme({
+  pallete: {
+    // mode: "dark",
+  },
+});
 
 const drawerWidth = 240;
 

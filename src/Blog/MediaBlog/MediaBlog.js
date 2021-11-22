@@ -8,7 +8,7 @@ export const featuredPosts = [
     imageLabel: "Image Text",
   },
   {
-    title: "Post title",
+    title: "Post asdf",
     date: "Nov 11",
     description:
       "This is a wider card with supporting text below as a natural lead-in to additional content.",

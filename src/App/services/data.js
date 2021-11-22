@@ -1,8 +1,8 @@
 export const infoPropsStudent = {
   headId: [
-    "id",
-    "fname",
-    "lname",
+    "stud_id",
+    "first_name",
+    "last_name",
     "gender",
     "age",
     "contact_add",
@@ -22,145 +22,12 @@ export const infoPropsStudent = {
     "Acciones",
   ],
 };
-function createDataStudent(
-  id,
-  fname,
-  lname,
-  gender,
-  age,
-  contact_add,
-  stud_email,
-  stud_pass
-) {
-  return {
-    id,
-    fname,
-    lname,
-    gender,
-    age,
-    contact_add,
-    stud_email,
-    stud_pass,
-  };
-}
-export const rowsStudents = [
-  createDataStudent(
-    1,
-    "Karoly",
-    "Foale",
-    "M",
-    27,
-    "6391144800",
-    "kfoale0@jiathis.com",
-    "thWmJGx0TM1"
-  ),
-  createDataStudent(
-    2,
-    "Karoly",
-    "Foale",
-    "M",
-    27,
-    "6391144800",
-    "kfoale0@jiathis.com",
-    "thWmJGx0TM1"
-  ),
-  createDataStudent(
-    3,
-    "Karoly",
-    "Foale",
-    "M",
-    27,
-    "6391144800",
-    "kfoale0@jiathis.com",
-    "thWmJGx0TM1"
-  ),
-  createDataStudent(
-    4,
-    "Karoly",
-    "Foale",
-    "M",
-    27,
-    "6391144800",
-    "kfoale0@jiathis.com",
-    "thWmJGx0TM1"
-  ),
-  createDataStudent(
-    5,
-    "Karoly",
-    "Foale",
-    "M",
-    27,
-    "6391144800",
-    "kfoale0@jiathis.com",
-    "thWmJGx0TM1"
-  ),
-  createDataStudent(
-    6,
-    "Karoly",
-    "Foale",
-    "M",
-    27,
-    "6391144800",
-    "kfoale0@jiathis.com",
-    "thWmJGx0TM1"
-  ),
-  createDataStudent(
-    7,
-    "Karoly",
-    "Foale",
-    "M",
-    27,
-    "6391144800",
-    "kfoale0@jiathis.com",
-    "thWmJGx0TM1"
-  ),
-  createDataStudent(
-    8,
-    "Karoly",
-    "Foale",
-    "M",
-    27,
-    "6391144800",
-    "kfoale0@jiathis.com",
-    "thWmJGx0TM1"
-  ),
-  createDataStudent(
-    9,
-    "Karoly",
-    "Foale",
-    "M",
-    27,
-    "6391144800",
-    "kfoale0@jiathis.com",
-    "thWmJGx0TM1"
-  ),
-  createDataStudent(
-    10,
-    "Karoly",
-    "Foale",
-    "M",
-    27,
-    "6391144800",
-    "kfoale0@jiathis.com",
-    "thWmJGx0TM1"
-  ),
-  createDataStudent(
-    11,
-    "Karoly",
-    "Foale",
-    "M",
-    27,
-    "6391144800",
-    "kfoale0@jiathis.com",
-    "thWmJGx0TM1"
-  ),
-];
 
 export const infoPropsInstructor = {
   headId: [
     "id",
-    "fname",
-    "lname",
+    "first_name",
+    "last_name",
     "gender",
     "age",
     "contact_add",
@@ -180,117 +47,75 @@ export const infoPropsInstructor = {
     "Acciones",
   ],
 };
-function createDataInstructor(
-  id,
-  fname,
-  lname,
-  gender,
-  age,
-  contact_add,
-  ins_email,
-  ins_pass
-) {
-  return {
-    id,
-    fname,
-    lname,
-    gender,
-    age,
-    contact_add,
-    ins_email,
-    ins_pass,
-  };
-}
 
-export const rowsInstructor = [
-  createDataInstructor(
-    1,
-    "Julio Cesar",
-    "Foale",
-    "M",
-    27,
-    "6391144800",
-    "kfoale0@jiathis.com",
-    "thWmJGx0TM1"
-  ),
-  createDataInstructor(
-    2,
-    "Julio Cesar",
-    "Foale",
-    "M",
-    27,
-    "6391144800",
-    "kfoale0@jiathis.com",
-    "thWmJGx0TM1"
-  ),
-  createDataInstructor(
-    3,
-    "Julio Cesar",
-    "Foale",
-    "M",
-    27,
-    "6391144800",
-    "kfoale0@jiathis.com",
-    "thWmJGx0TM1"
-  ),
-  createDataInstructor(
-    4,
-    "Julio Cesar",
-    "Foale",
-    "M",
-    27,
-    "6391144800",
-    "kfoale0@jiathis.com",
-    "thWmJGx0TM1"
-  ),
-  createDataInstructor(
-    5,
-    "Julio Cesar",
-    "Foale",
-    "M",
-    27,
-    "6391144800",
-    "kfoale0@jiathis.com",
-    "thWmJGx0TM1"
-  ),
-  createDataInstructor(
-    6,
-    "Julio Cesar",
-    "Foale",
-    "M",
-    27,
-    "6391144800",
-    "kfoale0@jiathis.com",
-    "thWmJGx0TM1"
-  ),
-  createDataInstructor(
-    7,
-    "Julio Cesar",
-    "Foale",
-    "M",
-    27,
-    "6391144800",
-    "kfoale0@jiathis.com",
-    "thWmJGx0TM1"
-  ),
-  createDataInstructor(
-    8,
-    "Julio Cesar",
-    "Foale",
-    "M",
-    27,
-    "6391144800",
-    "kfoale0@jiathis.com",
-    "thWmJGx0TM1"
-  ),
-  createDataInstructor(
-    9,
-    "Julio Cesar",
-    "Foale",
-    "M",
-    27,
-    "6391144800",
-    "kfoale0@jiathis.com",
-    "thWmJGx0TM1"
-  ),
+export const students = [
+  {
+    id: 1,
+    first_name: "asdf",
+    last_name: "Sultan",
+    gender: "M",
+    age: 35,
+    contact_add: "639 113 32 43",
+    stud_email: "rsultan0@phoca.cz",
+    stud_pass: "h4RmmdG",
+  },
+  {
+    id: 2,
+    first_name: "Molly",
+    gender: "F",
+    last_name: "Penvarden",
+    age: 33,
+    contact_add: "639 113 32 43",
+    stud_email: "mpenvarden1@usa.gov",
+    stud_pass: "BVmtq7oIXFu3",
+  },
+  {
+    id: 3,
+    first_name: "Peggie",
+    last_name: "Batten",
+    gender: "F",
+    age: 26,
+    contact_add: "639 113 32 43",
+    stud_email: "pbatten2@oakley.com",
+    stud_pass: "m7kKcQzUIgr",
+  },
+  {
+    id: 4,
+    first_name: "Celie",
+    last_name: "Harry",
+    gender: "F",
+    age: 19,
+    contact_add: "639 113 32 43",
+    stud_email: "charry3@linkedin.com",
+    stud_pass: "icUTKIH",
+  },
+  {
+    id: 5,
+    first_name: "Menard",
+    last_name: "MacCawley",
+    gender: "M",
+    age: 29,
+    contact_add: "639 113 32 43",
+    stud_email: "mmaccawley4@mit.edu",
+    stud_pass: "hDxXgw3aURP",
+  },
+];
+
+const dataForm = [
+  {
+    name: "Primero",
+    isHeader: true,
+  },
+  {
+    name: "Mate 1",
+    isHeader: true,
+  },
+  {
+    name: "Primero",
+    isHeader: true,
+  },
+  {
+    name: "Primero",
+    isHeader: true,
+  },
 ];

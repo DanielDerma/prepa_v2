@@ -17,6 +17,7 @@ import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import { Toolbar } from "@mui/material";
 import SchoolOutlinedIcon from "@mui/icons-material/SchoolOutlined";
+
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
     return -1;
@@ -47,39 +48,6 @@ function stableSort(array, comparator) {
   return stabilizedThis.map((el) => el[0]);
 }
 
-const headCellsAA = [
-  {
-    id: "id",
-    numeric: false,
-    disablePadding: true,
-    label: "ID",
-  },
-  {
-    id: "fname",
-    numeric: false,
-    disablePadding: false,
-    label: "Nombre",
-  },
-  {
-    id: "lname",
-    numeric: false,
-    disablePadding: false,
-    label: "Apellido",
-  },
-  {
-    id: "email",
-    numeric: false,
-    disablePadding: false,
-    label: "Email",
-  },
-  {
-    id: "actions",
-    numeric: true,
-    disablePadding: true,
-    label: "Actions",
-  },
-];
-
 function EnhancedTableHead(props) {
   const {
     onSelectAllClick,
@@ -95,7 +63,6 @@ function EnhancedTableHead(props) {
   };
 
   const { headId, headLabels } = infoProps;
-  console.log(headId);
   const headCells = headId.map((cell, index) => {
     const labels = headLabels[index];
     const info = {
@@ -157,7 +124,7 @@ EnhancedTableHead.propTypes = {
   rowCount: PropTypes.number.isRequired,
 };
 
-export default function EnhancedTable({ rows, infoProps }) {
+export default function EnhancedTable({ rows, infoProps, isSiiMain }) {
   const [order, setOrder] = React.useState("asc");
   const [orderBy, setOrderBy] = React.useState("id");
   const [selected, setSelected] = React.useState([]);
@@ -168,7 +135,6 @@ export default function EnhancedTable({ rows, infoProps }) {
     setOrder(isAsc ? "desc" : "asc");
     setOrderBy(property);
   };
-  console.log(rows);
   const handleSelectAllClick = (event) => {
     if (event.target.checked) {
       const newSelecteds = rows.map((n) => n.id);
@@ -207,7 +173,7 @@ export default function EnhancedTable({ rows, infoProps }) {
     setPage(0);
   };
 
-  const isSelected = (id) => selected.indexOf(id) !== -1;
+  const isSelected = (stud_id) => selected.indexOf(stud_id) !== -1;
 
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
@@ -251,7 +217,6 @@ export default function EnhancedTable({ rows, infoProps }) {
     numSelected: PropTypes.number.isRequired,
   };
   const { headId } = infoProps;
-  console.log(headId);
   return (
     <Box sx={{ width: "100%" }}>
       <Paper sx={{ width: "100%", mb: 2 }}>
@@ -278,22 +243,20 @@ export default function EnhancedTable({ rows, infoProps }) {
                 .map((row, index) => {
                   const isItemSelected = isSelected(row.id);
                   const labelId = `enhanced-table-checkbox-${index}`;
-
+                  console.log(row, "arrow");
                   return (
                     <TableRow
                       hover
-                      // role="checkbox"
                       aria-checked={isItemSelected}
                       tabIndex={-1}
-                      key={row.id}
+                      key={row.stud_id}
                       selected={isItemSelected}
                     >
                       <TableCell padding="checkbox">
                         <Checkbox
                           color="primary"
                           checked={isItemSelected}
-                          //
-                          onClick={(event) => handleClick(event, row.id)}
+                          onClick={(event) => handleClick(event, row.stud_id)}
                           inputProps={{
                             "aria-labelledby": labelId,
                           }}
@@ -305,11 +268,11 @@ export default function EnhancedTable({ rows, infoProps }) {
                         scope="row"
                         padding="none"
                       >
-                        {row.id}
+                        {row.stud_id}
                       </TableCell>
 
-                      <TableCell>{row.fname}</TableCell>
-                      <TableCell>{row.lname}</TableCell>
+                      <TableCell>{row.first_name}</TableCell>
+                      <TableCell>{row.last_name}</TableCell>
                       <TableCell>{row.gender}</TableCell>
                       <TableCell>{row.age}</TableCell>
                       <TableCell>{row.contact_add}</TableCell>
@@ -319,14 +282,22 @@ export default function EnhancedTable({ rows, infoProps }) {
                       <TableCell>
                         {row.ins_pass ? row.ins_pass : row.stud_pass}
                       </TableCell>
-                      <TableCell align="center">
-                        <Button>
-                          <EditOutlinedIcon fontSize="small" />
-                        </Button>
-                        <Button color="secondary">
-                          <CloseOutlinedIcon fontSize="small" />
-                        </Button>
-                      </TableCell>
+                      {!isSiiMain ? (
+                        <TableCell align="center">
+                          <Button>
+                            <EditOutlinedIcon fontSize="small" />
+                          </Button>
+                          <Button color="secondary">
+                            <CloseOutlinedIcon fontSize="small" />
+                          </Button>
+                        </TableCell>
+                      ) : (
+                        <TableCell align="left" sx={{ pl: 4.5 }}>
+                          <Button>
+                            <SchoolOutlinedIcon fontSize="medium" />
+                          </Button>
+                        </TableCell>
+                      )}
                     </TableRow>
                   );
                 })}
